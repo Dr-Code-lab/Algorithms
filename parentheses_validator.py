@@ -29,18 +29,19 @@ class Parentheses_validator():
         else:
             print('\033[91m',self.isValid(self.content), '\033[0m\n........')
 
-if __name__ == '__main__':
+## TEST :
+# if __name__ == '__main__':
 
-    text = (
-            '(){}[]',                                       # True
-            ']',                                            # False
-            '(])',                                          # False
-            '{',                                            # False
-            '(}',                                           # False
-            '([{()(){[)[}{{}}{{{}}}]]}]})',                 # False
-            '(({[[[[[[{{{{{}[][()]}}}}]]]]]}]))',           # False
-            '([{[([{()()}{[[[[{}{}{}][()()()]]]]}])]}])',   # True
-             )
+#     text = (
+#             '(){}[]',                                       # True
+#             ']',                                            # False
+#             '(])',                                          # False
+#             '{',                                            # False
+#             '(}',                                           # False
+#             '([{()(){[)[}{{}}{{{}}}]]}]})',                 # False
+#             '(({[[[[[[{{{{{}[][()]}}}}]]]]]}]))',           # False
+#             '([{[([{()()}{[[[[{}{}{}][()()()]]]]}])]}])',   # True
+#              )
              
-    for string in text:
-        Parentheses_validator(string).main()
+#     for string in text:
+#         Parentheses_validator(string).main()
