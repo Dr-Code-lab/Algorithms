@@ -1,7 +1,10 @@
-class Parentheses_validator():
-    def __init__(self, constructor = 'init print'):
-            self.content = constructor
-            print('>>', '\n', 'CONTENT : ',constructor)
+class ParenthesesValidator():
+    from typing import List
+
+    def __init__(self, content = '( init string)', fix = False):
+            self.content = content
+            self.fix = fix
+            print('>>', '\n', 'CONTENT : ',content)
 
 
     def isValid(self,s: str) -> bool:
@@ -20,8 +23,6 @@ class Parentheses_validator():
         if not stack_operations:
             return True
         return False
-        
-
 
     def main(self):
         if self.isValid(self.content):
@@ -29,19 +30,19 @@ class Parentheses_validator():
         else:
             print('\033[91m',self.isValid(self.content), '\033[0m\n........')
 
-## TEST :
-# if __name__ == '__main__':
+# TEST :
+if __name__ == '__main__':
 
-#     text = (
-#             '(){}[]',                                       # True
-#             ']',                                            # False
-#             '(])',                                          # False
-#             '{',                                            # False
-#             '(}',                                           # False
-#             '([{()(){[)[}{{}}{{{}}}]]}]})',                 # False
-#             '(({[[[[[[{{{{{}[][()]}}}}]]]]]}]))',           # False
-#             '([{[([{()()}{[[[[{}{}{}][()()()]]]]}])]}])',   # True
-#              )
+    text = (
+            '(){}[]',                                       # True
+            ']',                                            # False
+            '(])',                                          # False
+            '{',                                            # False
+            '(}',                                           # False
+            '([{()(){[)[}{{}}{{{}}}]]}]})',                 # False
+            '(({[[[[[[{{{{{}[][()]}}}}]]]]]}]))',           # False
+            '([{[([{()()}{[[[[{}{}{}][()()()]]]]}])]}])',   # True
+             )
              
-#     for string in text:
-#         Parentheses_validator(string).main()
+    for string in text:
+        ParenthesesValidator(string, True).main()
