@@ -8,16 +8,16 @@ class ContainerWithMostWater():
     def maxArea(self, height: List[int]) -> int:
         start = 0
         end = len(height)-1
-        area = (end - start) * (height[start] - height[end])**2**0,5
-        print("AREA: ", area)
+        area = 0
         while start <= end:
             if height[start] < height[end]:
+                result = height[start] * (end - start)
                 start += 1
             else:
+                result = height[end] * (end - start)
                 end -= 1
-            test = ((end - start) * (height[start] - height[end]))**2**0,5
-            if test > area:
-                area = test    
+            if result > area:
+                area = result
         return area
     
     def main(self):
@@ -37,7 +37,10 @@ if __name__ == '__main__':
             [7,8,9,0,1,2,3,4,5,6],
             [4,1,2,3],
             [2,3,4,5],
-            [5]
+            [0],
+            [],
+            [5],
+            [1,1]
              )
              
     for item in text:
